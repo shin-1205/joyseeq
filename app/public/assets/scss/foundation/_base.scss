@@ -1,0 +1,97 @@
+@use "../setting/mixin" as *;
+
+// @font-face{
+//   font-display: swap; /* display=swapの設定 */
+// }
+
+
+html{
+  color: #333;
+  font-size: $baseFontsize + px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body, html{
+  font-family: "游ゴシック体", YuGothic, "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans", sans-serif;
+  line-height: 1.47;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1300px){
+  html{
+    font-size: 1.7222vw;
+  }
+}
+
+@media (max-width: 768px){
+  html{
+    font-size: 3.2222vw;
+  }
+}
+
+*, *::after, *::before{
+  box-sizing: border-box;
+  outline: none;
+}
+
+li{
+  list-style-type: none;
+}
+
+a{
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+a img:hover, a:hover{
+  opacity: 0.8;
+}
+
+li img{
+  display: block;
+}
+
+a img{
+  border-style: none;
+}
+
+img{
+  vertical-align: bottom;
+  width: 100%;
+  max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-weight: 600;
+}
+
+dt{
+  font-weight: 500;
+}
+
+input[type="checkbox"]{
+  position: absolute;
+
+  visibility: hidden;
+}
+
+input[type="text"], textarea{
+  width: 100%;
+  padding: rem(5) rem(28);
+  background-color: #efefef;
+  letter-spacing: 0.05em;
+
+  @include sp{
+    padding: rem(8) rem(15);
+    font-size: 1.32rem;
+  }
+  &::placeholder{
+    color: #707070;
+  }
+}
+
+textarea{
+  height: rem(221);
+  overflow-y: scroll;
+}

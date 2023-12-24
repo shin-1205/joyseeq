@@ -1,0 +1,116 @@
+@use "../setting/mixin" as *;
+
+.c_line_btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 88%;
+  max-width: 407px;
+  padding: rem(12) 0;
+  margin: 0 auto;
+  background-color: $green;
+  border-radius: rem(9);
+  box-shadow: rem(-20) rem(-20) rem(25) rem(2) rgba(255, 255, 255, 0.9),
+  rem(20) rem(20) rem(25) rem(4) rgba(207, 211, 222, 0.7);
+  color: #fff;
+  text-align: center;
+
+  @include sp{
+    padding: rem(27) 0;
+    box-shadow: rem(-10) rem(-10) rem(13) rem(2) rgba(255, 255, 255, 0.9),
+    rem(10) rem(10) rem(13) rem(4) rgba(207, 211, 222, 0.7);
+  }
+
+  &-icon{
+    display: inline-block;
+    width: rem(44);
+    margin-right: rem(12);
+
+    @include sp{
+      margin-right: rem(14);
+    }
+  }
+
+  &-txt{
+    font-size: rem(30);
+    font-weight: 600;
+
+    @include sp{
+      font-size: rem(33);
+    }
+  }
+}
+
+.c_btn_more{
+  display: block;
+  width: rem(406);
+  max-width: 86%;
+  padding: rem(21) rem(9);
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $key_gray;
+  font-family: $futura;
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+
+  @include sp{
+    width: rem(460);
+    padding: rem(29) rem(9);
+    font-size: 1.08rem;
+  }
+
+  &::before{
+    content: "";
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s;
+  }
+
+  .txt{
+    position: relative;
+  }
+
+  .arw{
+    display: block;
+    width: rem(51);
+    top: 44%;
+    right: rem(33);
+
+    @include trans_y;
+    @include sp{
+      width: rem(73);
+      top: 46%;
+      right: rem(42);
+    }
+
+    &.on{
+      display: none;
+    }
+  }
+
+  &:hover{
+    .txt{
+      color: $key_gray;
+    }
+
+    &::before{
+      width: 100%;
+    }
+    .arw{
+      &.off{
+        display: none;
+      }
+
+      &.on{
+        display: block;
+      }
+    }
+  }
+}

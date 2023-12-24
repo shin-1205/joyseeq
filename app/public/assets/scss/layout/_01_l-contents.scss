@@ -1,0 +1,36 @@
+@use "../setting/mixin" as *;
+
+.l-wrapper{
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.l-inner{
+  width: 90%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.l-main{
+  background-color: #f8f8f8;
+}
+
+.l-sec-box{
+  @include sp{
+    padding-bottom: rem(38);
+    overflow: hidden;
+  }
+  &__inner{
+    padding: rem(33) rem(60);
+    background-color: #f8f8f8;
+    border-radius: rem(35);
+    overflow: hidden;
+
+    @include sp{
+      padding: 0 5%;
+      overflow: visible;
+    }
+  }
+}

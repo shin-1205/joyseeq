@@ -1,0 +1,156 @@
+@use "../setting/mixin" as *;
+
+.l-footer{
+  padding: rem(67) 0 rem(48);
+  background-color: $key_gray;
+  color: #b3b4b5;
+
+  @include sp{
+    padding: rem(90) 0 rem(28);
+  }
+
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    max-width: 1110px;
+    margin: 0 auto;
+
+    @include sp{
+      display: block;
+    }
+  }
+
+  &__left{
+    width: 72%;
+
+    @include sp{
+      width: 100%;
+    }
+  }
+
+  &__nav{
+    margin-bottom: rem(56);
+    &-list{
+      display: flex;
+
+      @include sp{
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    &-item{
+      font-family: $futura;
+      font-size: rem(22);
+      font-weight: 500;
+      letter-spacing: 0.08em;
+
+      @include pc-only{
+        &:not(:last-of-type){
+          margin-right: rem(45);
+        }
+      }
+      @include sp{
+        width: 24%;
+        margin: 0 rem(17) rem(19);
+        font-size: 1.22rem;
+        &:nth-of-type(4), &:nth-of-type(5), &:nth-of-type(6){
+          padding-left: 1em;
+          text-align: center;
+        }
+
+        &:last-of-type{
+          padding-left: 0.3em;
+          text-align: left;
+        }
+      }
+    }
+  }
+  &__sns{
+    display: flex;
+
+    @include sp{
+      justify-content: center;
+      margin: 1.0rem 0 2.7rem;
+    }
+    &-item{
+      @include pc-only{
+        &:not(:last-of-type){
+          margin-right: rem(20);
+        }
+      }
+    }
+
+    &-link{
+      display: flex;
+      align-items: center;
+      font-size: rem(20);
+
+      @include sp{
+        margin: 0 0.8rem;
+        font-size: 1.12rem;
+      }
+    }
+
+    &-icon{
+      display: block;
+      margin-right: rem(10);
+
+      @include sp{
+        margin-right: rem(14);
+      }
+      img{
+        width: auto;
+
+        @include sp{
+          zoom: 0.48;
+        }
+        zoom: 0.5;
+      }
+    }
+  }
+
+  &__right{
+    width: 30%;
+
+    @include sp{
+      width: 100%;
+    }
+  }
+
+  &__logo{
+    width: 80%;
+    margin: 0 auto rem(54);
+
+    @include sp{
+      width: 50%;
+    }
+  }
+
+  &__sub_nav{
+    display: flex;
+    justify-content: center;
+
+    &-item{
+      margin: 0 rem(10);
+      font-size: rem(14);
+
+      @include sp{
+        font-size: 1.08rem;
+      }
+    }
+  }
+}
+
+.l-pagetop{
+  display: block;
+  width: rem(49);
+  position: fixed;
+  right: 5%;
+  bottom: 3%;
+
+  @include sp{
+    display: none;
+  }
+}

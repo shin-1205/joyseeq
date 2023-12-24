@@ -1,0 +1,139 @@
+// mathモジュールの使用
+@use "sass:math";
+
+/* REM PX変換 */
+
+$baseFontsize: 24;
+
+@function rem($pixels){
+  // math.div関数を使用して除算
+  @return math.div($pixels, $baseFontsize) * 1rem;
+}
+
+$px: 767px;
+
+@mixin mq($px){
+  @media screen and (max-width: ($px)){
+    @content;
+  }
+}
+
+/* ブレイクポイント指定 */
+
+$pc: 1200px; // PC
+$tab: 1000px; // タブレット
+$sp: 768px; // スマホ
+
+$mobail-max: 769px;
+$xs-max: 575.98px;
+$sm-max: 767.98px;
+$md-max: 991.98px;
+$lg-max: 1199.98px;
+$sm-min: 576px;
+$md-min: 768px;
+$lg-min: 992px;
+$xl-min: 1200px;
+
+@mixin pc{
+  @media (max-width: $pc){
+    @content;
+  }
+}
+
+@mixin pc-only{
+  @media (min-width: $mobail-max){
+    @content;
+  }
+}
+
+@mixin tab{
+  @media (max-width: $tab){
+    @content;
+  }
+}
+
+@mixin sp{
+  @media (max-width: $sp){
+    @content;
+  }
+}
+
+@mixin inner{
+  width: 92%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include sp{
+    width: 90%;
+  }
+}
+
+@mixin trans_x{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin trans_y{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin trans_xy{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin flex-sb{
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-all-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin bg-cover{
+  background: no-repeat 50% 50% / cover;
+}
+
+
+$key_pink: #ea3323;
+$key_blue: #0050af;
+$key_gold: #a4944c;
+$key_gray: #1e2225;
+$red: #ca0a0a;
+$orange: #f8b100;
+$yellow: #ffe103;
+$green: #2cb81f;
+$key_red: #d62326;
+$key_braun: rgba(#e8e5dd, 0.5);
+$gosic: "游ゴシック体", YuGothic, "Yu Gothic", "ヒラギノ角ゴシック", "Hiragino Sans", sans-serif;
+$futura: futura-pt, sans-serif;
+$din: din-2014, sans-serif;
+
+.yellow{
+  color: $yellow;
+}
+
+.blue{
+  color: $key_blue;
+}
+
+.red{
+  color: #ea3323;
+}
+
+.blue02{
+  color: #12406d;
+}
+
+.purplr{
+  color: #6a23d7;
+}

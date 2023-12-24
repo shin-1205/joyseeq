@@ -1,0 +1,50 @@
+@use "../setting/mixin" as *;
+
+.l-ie-alert{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9997;
+  &__bg{
+    width: 100%;
+    height: 100%;
+    background-color: #45454582;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+  }
+
+  &__content{
+    width: 94%;
+    max-width: 750px;
+    padding: 2.11rem;
+    background-color: #fff;
+    text-align: center;
+    position: relative;
+    z-index: 9999;
+  }
+
+  &__ttl{
+    margin-bottom: 1.2rem;
+    line-height: 1.42;
+  }
+
+  &__desc{
+    margin-bottom: 1.1rem;
+    font-family: $gosic;
+    font-size: 0.92rem;
+    line-height: 1.33;
+  }
+
+  &__btn{
+    &:not(:last-of-type){
+      margin-bottom: 0.88rem;
+    }
+  }
+}

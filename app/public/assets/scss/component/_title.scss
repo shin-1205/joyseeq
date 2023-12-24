@@ -1,0 +1,126 @@
+@use "../setting/mixin" as *;
+
+.c_sec_ttl{
+  padding-top: rem(81);
+  margin-bottom: rem(50);
+  position: relative;
+
+  @include sp{
+    padding-top: rem(43);
+    margin-bottom: rem(77);
+  }
+  .texts{
+    position: relative;
+    z-index: 500;
+
+    @include sp{
+      padding-left: 1.28rem;
+    }
+    &::before{
+      content: "";
+      width: rem((57));
+      height: rem(2);
+      background-color: $key_gray;
+      position: absolute;
+      top: 38%;
+      left: rem(-67);
+
+      @include sp{
+        width: rem(106);
+        height: rem(3);
+        top: 10%;
+        left: -14%;
+      }
+    }
+  }
+
+  .jp{
+    font-size: rem(18);
+    font-weight: 600;
+    line-height: 1;
+    position: relative;
+
+    @include sp{
+      margin-bottom: rem(6);
+      font-size: rem(30);
+    }
+  }
+
+  .en{
+    font-family: $futura;
+    font-size: rem(54);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.07em;
+    position: relative;
+
+    @include sp{
+      font-size: rem(88);
+      letter-spacing: 0.14em;
+    }
+  }
+
+
+  .num{
+    font-family: $din;
+    color: rgba($color: #f8b100, $alpha: 0.3);
+    font-size: rem(202);
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0.1;
+    letter-spacing: -0.02em;
+    position: absolute;
+    top: rem(76);
+    left: rem(-17);
+
+    @include sp{
+      font-size: rem(238);
+      top: rem(62);
+      left: rem(18);
+    }
+  }
+
+  .bg{
+    width: 100px;
+    position: absolute;
+  }
+
+  &.--sp_re{
+    @include sp{
+      text-align: right;
+      .texts{
+        padding-left: 0;
+        padding-right: 7%;
+        &::before{
+          width: rem(120);
+          left: auto;
+          right: -12%;
+        }
+      }
+
+      .num{
+        left: auto;
+        right: 5%;
+      }
+    }
+  }
+
+  &.--sp_center{
+    @include sp{
+      text-align: center;
+
+      .texts{
+        padding-left: 0;
+        &::before{
+          width: 40%;
+          left: -6.5%;
+        }
+      }
+
+      .num{
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}

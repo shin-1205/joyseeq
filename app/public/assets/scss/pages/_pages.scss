@@ -1,0 +1,208 @@
+@use "../setting/mixin" as *;
+
+.page_heading{
+  &__texts{
+    padding: rem(404) 0 rem(90);
+    color: #fff;
+
+    @include sp{
+      padding: rem(300) 0 rem(25);
+    }
+    &-jp{
+      font-size: rem(18);
+
+      @include sp{
+        font-size: 0.98rem;
+      }
+    }
+
+    &-en{
+      font-family: $futura;
+      font-size: rem(54);
+      font-weight: 700;
+      letter-spacing: 0.07em;
+
+      @include sp{
+        font-size: rem(90);
+        line-height: 1;
+      }
+    }
+  }
+}
+
+.page_talent{
+  padding: rem(88) 0;
+}
+
+.page_talent_list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  @include pc-only{
+    &::after{
+      content: "";
+      display: block;
+      width: 31.1%;
+    }
+  }
+  &__item{
+    width: 31.1%;
+    height: rem(450);
+    margin-bottom: 1.5rem;
+    border-radius: rem(19);
+
+    @include sp{
+      width: 48%;
+      height: rem(550);
+    }
+  }
+
+  &__inside{
+    height: 100%;
+    border-radius: rem(19);
+    overflow: hidden;
+    position: relative;
+  }
+  &__content{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: rem(102);
+    padding: rem(7) 0 rem(13);
+    background-color: rgba($color: #1e2225, $alpha: 0.8);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    @include sp{
+      justify-content: flex-start;
+      min-height: rem(165);
+      padding: rem(7) 7% rem(13);
+      &.--auto{
+        min-height: auto;
+        padding: rem(23) 7%;
+        .page_talent_list__name{
+          margin-bottom: 0;
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+  &__name{
+    color: #fff;
+    font-size: rem(31);
+    letter-spacing: 0.075em;
+    text-align: center;
+
+    @include sp{
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__sns{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+
+    &-item{
+      width: 46%;
+      margin: 0 1.1%;
+
+      @include sp{
+        width: 100%;
+        margin: 0 0 0.33rem;
+        &:last-of-type{
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &-link{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-icon{
+      display: inline-block;
+      width: 23%;
+
+      @include sp{
+        width: 16%;
+      }
+    }
+
+    &-id{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 74%;
+      background-color: #fff;
+      border-right: rem(6) solid #1e2225;
+      border-radius: rem(3);
+      text-align: center;
+
+      @include sp{
+        width: 81%;
+      }
+    }
+
+    &-txt{
+      font-size: rem(16);
+      font-weight: 600;
+      line-height: 1;
+
+      @include sp{
+        font-size: 1.03rem;
+      }
+    }
+  }
+}
+
+.page_talent_line{
+  margin-top: rem(70);
+}
+
+.page_privacy{
+  padding: rem(188) 0 rem(99);
+  letter-spacing: 0.07em;
+  word-break: break-all;
+  &__ttl{
+    margin-bottom: rem(60);
+    font-size: rem(55);
+    text-align: center;
+  }
+
+  &__read{
+    margin-bottom: rem(40);
+    font-size: rem(32);
+    font-weight: 600;
+  }
+
+  &__group{
+    &:not(:last-of-type){
+      margin-bottom: rem(54);
+    }
+    &-ttl{
+      font-size: rem(32);
+      font-weight: 600;
+    }
+
+    &-data{
+      line-height: 1.81;
+    }
+
+    .large{
+      font-size: rem(32);
+      font-weight: 600;
+    }
+  }
+}
+
+.page_privacy_btn{
+  margin-top: rem(58);
+}
