@@ -41,6 +41,11 @@ function ua_smt() {
   <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/favicon/favicon-16x16.png">
   <link rel="manifest" href="./assets/images/favicon/site.webmanifest">
   <link rel="mask-icon" href="./assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 </head>
@@ -48,6 +53,13 @@ function ua_smt() {
 <body>
   <?php include_once("tag/start_body_tag.php") ?>
   <div class="l-wrapper">
+    <?php
+
+if (strpos($_SERVER['REQUEST_URI'], 'contact.php') !== false || strpos($_SERVER['REQUEST_URI'], 'confirm.php') !== false) {
+  // お問い合わせ関連ページの場合、ヘッダーは表示しない
+} else {
+  // フォーム関連ページ以外の場合、ヘッダーは表示する
+  ?>
     <header class="l-header" id="js_header">
       <div class="l-header__inner">
         <h1 class="l-header__logo"> <a href="/"> <img src="./assets/images/common/logo.jpg" alt="JOYSEEQ"> </a> </h1>
@@ -97,3 +109,7 @@ function ua_smt() {
         </div>
       </div>
     </header>
+    <?php
+}
+
+?>
