@@ -9,29 +9,29 @@
     padding-top: rem(43);
     margin-bottom: rem(77);
   }
-  .texts{
+  .text{
     position: relative;
     z-index: 500;
 
     @include sp{
       padding-left: 1.28rem;
     }
-    &::before{
-      content: "";
-      width: rem((57));
-      height: rem(2);
-      background-color: $key_gray;
-      position: absolute;
-      top: 38%;
-      left: rem(-67);
+    // &::before{
+    //   content: "";
+    //   width: rem((57));
+    //   height: rem(2);
+    //   background-color: $key_gray;
+    //   position: absolute;
+    //   top: 38%;
+    //   left: rem(-67);
 
-      @include sp{
-        width: rem(106);
-        height: rem(3);
-        top: 10%;
-        left: -14%;
-      }
-    }
+    //   @include sp{
+    //     width: rem(106);
+    //     height: rem(3);
+    //     top: 10%;
+    //     left: -14%;
+    //   }
+    // }
   }
 
   .jp{

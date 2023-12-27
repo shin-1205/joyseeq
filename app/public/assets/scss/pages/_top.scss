@@ -1,5 +1,126 @@
 @use "../setting/mixin" as *;
 
+/* floating button */
+
+// .top-float {
+//   visibility: hidden;
+//   opacity: 0;
+//   transition: visibility 0s, opacity 0.8s linear;
+// }
+// .top-float.show {
+//   visibility: visible;
+//   opacity: 1;
+// }
+
+.show{
+  display: block;
+}
+.top-float{
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.top_float_btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.25);
+  position: fixed;
+  bottom: 0;
+  z-index: 888;
+
+  @include mq(768px){
+    gap: 4px;
+  }
+
+  .top_float_btn__left{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+
+    .amazon{
+      position: relative;
+      .now{
+        width: 31.488px;
+        height: 31.488px;
+        position: absolute;
+        top: -8px;
+        left: -10px;
+      }
+
+      .img{
+        width: 85px;
+        height: 49.111px;
+
+        @include mq(768px){
+          width: 51px;
+          height: 32.111px;
+        }
+      }
+    }
+
+    .read{
+      width: 100%;
+      max-width: 239px;
+      color: #333;
+      font-size: 0.83333rem;
+      font-weight: 700;
+      font-style: normal;
+      line-height: 1.04167rem; /* 125% */
+
+      @include mq(768px){
+        max-width: 120px;
+        font-size: 10px;
+        font-weight: 700;
+        font-style: normal;
+        line-height: 1.1rem;
+      }
+      span{
+        background-image: linear-gradient(transparent 85%, #f8b100 76%);
+        background-size: 100% 100%;
+        .strong{
+          color: #333;
+          font-size: 1rem;
+          font-weight: 700;
+          font-style: normal;
+          line-height: 1.04167rem;
+
+          @include mq(768px){
+            font-size: 14px;
+            font-weight: 700;
+            font-style: normal;
+            line-height: 0.54167rem;
+          }
+        }
+      }
+    }
+  }
+
+  .top_float_btn__right{
+    max-width: 271px;
+    padding: 18px 0 0 0;
+    transition: 0.3s;
+
+    @include mq(768px){
+      width: 149px;
+      .sp{
+        display: block;
+      }
+
+      .pc{
+        display: none;
+      }
+    }
+
+    .sp{
+      display: none;
+    }
+  }
+}
 
 /* hero */
 
@@ -13,7 +134,7 @@
 
     @include mq(600px){
       max-width: 381px;
-      padding-top: 68px;
+      padding-top: 6.3rem;
       padding-left: 10px;
       padding-right: 10px;
     }
@@ -98,7 +219,7 @@
           @include mq(600px){
             padding-left: 5px;
             padding-bottom: 10px;
-            font-size: 32px;
+            font-size: 31px;
             line-height: 38px;
           }
         }
@@ -145,6 +266,12 @@
   --main-gradient: linear-gradient(180deg, #f89500 10.68%, #f2c72c 48.61%, #ff8c04 92.67%);
 }
 
+// 3つのステップ　ハイライトアニメーション用
+.hilight{
+  background-size: 100% 100% !important;
+}
+
+
 .fv-text{
   max-width: 843px;
   margin: 0 auto 10px;
@@ -159,7 +286,7 @@
   }
   &__top{
     padding: 19.64px;
-    margin-bottom: 112.36px;
+    margin-bottom: 52px;
     border-top: 5.891px solid #f5b22d;
     border-bottom: 5.891px solid #f5b22d;
     font-size: 62.836px;
@@ -167,6 +294,8 @@
     font-style: normal;
     line-height: normal;
     text-align: center;
+    animation: fadeInBorderTop 1s ease forwards;
+    animation: fadeInBorderBottom 1s ease forwards;
 
     @include mq(768px){
       padding: 14.755px;
@@ -174,16 +303,21 @@
       font-size: 47.215px;
 
       @include mq(600px){
-        padding: 10px;
-        margin-bottom: 49px;
+        padding: 10px 0;
+        margin-bottom: 20px;
         border-top: 3px solid #f5b22d;
         border-bottom: 3px solid #f5b22d;
         font-size: 32px;
+        line-height: 33px;
       }
     }
 
+    &__color{
+      display: flex;
+      justify-content: center;
+    }
 
-    .span{
+    .hero_text1, .hero_text2, .hero_text3, .hero_text4, .hero_text5{
       margin-bottom: 19.64px;
       background: var(--main-gradient);
 
@@ -197,6 +331,11 @@
         }
       }
       -webkit-text-fill-color: transparent;;
+    }
+
+    .hero_text10{
+      position: relative;
+      z-index: 2;
     }
   }
 
@@ -221,12 +360,25 @@
           letter-spacing: 0.42px;
         }
       }
-      .span{
-        background: linear-gradient(transparent 70%, #f36e1f 76%);
+
+      .hero_text15{
+        display: inline-block;
+        height: 36px;
+        background-image: linear-gradient(transparent 82%, #f36e1f 76%);
+        background-repeat: no-repeat;
+        background-size: 0 100%;
+        position: relative;
+        transition: background-size 0.8s;
 
         @include mq(768px){
-          background: linear-gradient(transparent 85%, #f36e1f 76%);
+          background-image: linear-gradient(transparent 85%, #f36e1f 76%);
+
+          @include mq(600px){
+            height: 18px;
+          }
         }
+
+
         .num{
           font-size: 32px;
           font-weight: 700;
@@ -475,7 +627,7 @@
       box-shadow: 13.279px 13.279px 33.936px 0 rgba(218, 218, 218, 0.90), -13.279px -13.279px 26.558px 0 rgba(255, 255, 255, 0.90), 13.279px -13.279px 26.558px 0 rgba(218, 218, 218, 0.20), -13.279px 13.279px 26.558px 0 rgba(218, 218, 218, 0.20);
 
       @include mq(600px){
-        max-width: 368px;
+        max-width: 338px;
         padding: 20px 0 0 0;
         margin: 0 auto 35px;
       }
@@ -582,7 +734,6 @@
         }
 
         .right-mid{
-          font-family: Yu Gothic;
           color: #f36e1f;
           font-size: 27.947px;
           font-weight: 700;
@@ -759,6 +910,7 @@
   font-family: futura-pt,sans-serif;
   color: #333;
   position: relative;
+
   .bg{
     display: block;
     width: 370px;
@@ -781,6 +933,7 @@
   }
 
   .l-inner{
+    padding-bottom: 60px;
     margin-bottom: 171px;
 
     @include mq(768px){
@@ -1136,6 +1289,10 @@
 .top-support{
   margin-bottom: 107px;
 
+  @include mq(768px){
+    margin-bottom: 75px;
+  }
+
   .l-sec-box__inner{
     padding: 1.4rem 2.5rem 3rem;
   }
@@ -1153,6 +1310,17 @@
 
           @include mq(550px){
             height: 120px;
+          }
+        }
+        .bg{
+          width: 3rem;
+          position: absolute;
+          top: 30px;
+          left: 19%;
+          transform: rotate(88deg);
+
+          @include mq(768px){
+            left: 44%;
           }
         }
         .jp{
@@ -1285,6 +1453,10 @@
 
 .top-tarent{
   margin-bottom: 114px;
+
+  @include mq(768px){
+    margin-bottom: 75px;
+  }
   .l-inner{
     .top-tarent__ttl{
       .texts{
@@ -1299,6 +1471,19 @@
 
           @include mq(550px){
             height: 120px;
+          }
+        }
+
+        .bg{
+          width: 8rem;
+          position: absolute;
+          top: 20px;
+          right: -1%;
+          transform: rotate(88deg);
+
+          @include mq(768px){
+            top: 20%;
+            right: 4%;
           }
         }
         .jp{
@@ -1345,111 +1530,299 @@
     }
 
     .box{
+      @include mq(768px){
+        padding-bottom: 60px;
+        margin-top: 50px;
+
+        @include mq(500px){
+          padding-bottom: 30px;
+          margin-top: 20px;
+        }
+      }
       .col{
+        margin-bottom: 70px;
         position: relative;
 
-        &:nth-child(1){
-          margin: 0 0 100px auto;
-          .heading{
-            &::before{
-              left: -344px;
-            }
-            &::after{
-              background: #a5d9e4;
-              left: -474px;
-            }
-            .read{
-              left: -20px;
-            }
-          }
+        @include mq(768px){
+          margin-bottom: 70px;
         }
-        &:nth-child(2){
-          margin: 0 auto 100px 0;
-          .heading{
-            &::before{
-              right: -344px;
-            }
-            &::after{
-              background: #ffc9aa;
-              right: -474px;
-            }
-            .read{
-              right: -20px;
-            }
-          }
-        }
+
         &:nth-child(3){
-          margin: 0 0 100px auto;
-          .heading{
-            &::before{
-              left: -344px;
-            }
-            &::after{
-              background: #fbdb9c;
-              left: -474px;
-            }
-            .read{
-              left: -20px;
-            }
+          @include mq(768px){
+            margin-bottom: 40px !important;
           }
         }
+
+
         .heading{
+          display: block;
+          width: 100%;
+          height: 100%;
+          margin: auto;
+          position: relative;
+          left: -2.5rem;
+          right: 0;
+
+          @include mq(800px){
+            left: -1.55;
+          }
+
           &::before{
             content: "";
             display: block;
-            width: 680px;
-            height: 6px;
+            width: 50px;
+            height: 51rem;
             margin: auto;
-            background: #333;
+            background: #a5d9e4;
             position: absolute;
-            bottom: 340px;
-            z-index: 2;
-            transform: rotate(90deg);
+            top: 40px;
+            left: 0;
+
+            @include mq(800px){
+              width: 1rem;
+              height: 79rem;
+              top: 30px;
+              left: 1rem;
+            }
           }
           &::after{
             content: "";
             display: block;
-            width: 888px;
-            height: 59px;
+            width: 6px;
+            height: 44rem;
             margin: auto;
+            background: #333;
             position: absolute;
-            bottom: 347px;
-            transform: rotate(90deg);
+            top: 130px;
+            left: 44px;
+
+            @include mq(800px){
+              width: 3px;
+              height: 70rem;
+              top: 120px;
+              left: 1.8rem;
+            }
           }
+
           .read{
             color: #333;
             font-size: 1.33333rem;
-            font-weight: 500;
+            font-weight: 700;
             font-style: normal;
             line-height: normal;
             letter-spacing: 0.13333rem;
             position: absolute;
             top: 0;
+            left: 1.2rem;
             z-index: 2;
 
+            @include mq(768px){
+              font-size: 1rem;
+              font-weight: 700;
+              font-style: normal;
+              line-height: normal;
+              letter-spacing: 0.1rem;
+            }
             writing-mode: vertical-lr;
+          }
+        }
+        .heading2{
+          display: block;
+          width: 100%;
+          height: 100%;
+          margin: auto;
+          position: relative;
+          right: -2.5rem;
+
+          @include mq(800px){
+            right: -1.55;
+          }
+
+          &::before{
+            content: "";
+            display: block;
+            width: 50px;
+            height: 48rem;
+            margin: auto;
+            background: #ffc9aa;
+            position: absolute;
+            top: 40px;
+            right: 0;
+
+            @include mq(800px){
+              width: 1rem;
+              height: 79rem;
+              top: 30px;
+              right: 0.9rem;
+            }
+          }
+          &::after{
+            content: "";
+            display: block;
+            width: 6px;
+            height: 42rem;
+            margin: auto;
+            background: #333;
+            position: absolute;
+            top: 130px;
+            right: 44px;
+
+            @include mq(800px){
+              width: 3px;
+              height: 70rem;
+              top: 120px;
+              right: 1.8rem;
+            }
+          }
+
+          .read{
+            color: #333;
+            font-size: 1.33333rem;
+            font-weight: 700;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.13333rem;
+            position: absolute;
+            top: 0;
+            right: 1.2rem;
+            z-index: 2;
+
+            @include mq(768px){
+              font-size: 1rem;
+              font-weight: 700;
+              font-style: normal;
+              line-height: normal;
+              letter-spacing: 0.1rem;
+            }
+            writing-mode: vertical-lr;
+          }
+        }
+        .heading3{
+          display: block;
+          width: 100%;
+          height: 100%;
+          margin: auto;
+          position: relative;
+          left: -2.5rem;
+          right: 0;
+
+          @include mq(800px){
+            left: -1.55;
+          }
+
+          &::before{
+            content: "";
+            display: block;
+            width: 50px;
+            height: 56rem;
+            margin: auto;
+            background: #fbdb9c;
+            position: absolute;
+            top: 40px;
+            left: 0;
+
+            @include mq(800px){
+              width: 1rem;
+              height: 79rem;
+              top: 30px;
+              left: 1rem;
+            }
+          }
+          &::after{
+            content: "";
+            display: block;
+            width: 6px;
+            height: 44rem;
+            margin: auto;
+            background: #333;
+            position: absolute;
+            top: 130px;
+            left: 44px;
+
+            @include mq(800px){
+              width: 3px;
+              height: 70rem;
+              top: 120px;
+              left: 1.8rem;
+            }
+          }
+
+          .read{
+            color: #333;
+            font-size: 1.33333rem;
+            font-weight: 700;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: 0.13333rem;
+            position: absolute;
+            top: 0;
+            left: 1.2rem;
+            z-index: 2;
+
+            @include mq(768px){
+              font-size: 1rem;
+              font-weight: 700;
+              font-style: normal;
+              line-height: normal;
+              letter-spacing: 0.1rem;
+            }
+            writing-mode: vertical-lr;
+          }
+        }
+
+        &:nth-child(2){
+          .inner{
+            .inner-top{
+              @include mq(800px){
+                flex-direction: column-reverse;
+                gap: 0;
+                margin-bottom: 30px;
+              }
+            }
           }
         }
 
         .inner{
           max-width: 938px;
+          padding: 0 20px;
           margin: 0 auto;
+
+          @include mq(768px){
+            padding: 0 10px;
+          }
+
+
           .inner-top{
             display: flex;
-            justify-content: space-between;
+            gap: 76px;
+            max-width: 940px;
             margin-bottom: 43px;
-            // 続き
 
-            @include mq(768px){
-              // flex-wrap: wrap-reverse;
+            @include mq(800px){
+              flex-direction: column;
+              gap: 0;
+              margin-bottom: 30px;
             }
+
             .inner-top__left{
               max-width: 400px;
               height: 490px;
+              background: #f5f5f5;
+              border-radius: 12px;
+              border-radius: 10px;
+              box-shadow: 6px 6px 15px 0 rgba(216, 216, 216, 0.90), -6px -6px 12px 0 rgba(255, 255, 255, 0.90), 6px -6px 12px 0 rgba(216, 216, 216, 0.20), -6px 6px 12px 0 rgba(216, 216, 216, 0.20);
+              overflow: hidden;
+
+              @include mq(800px){
+                max-width: 100%;
+                height: 304px;
+              }
 
               .img{
-                width: 400px;
-                height: 490px;
+                width: 100%;
+                height: 100%;
+
+                object-fit: cover;
               }
             }
 
@@ -1457,14 +1830,34 @@
               width: 100%;
               max-width: 348px;
               padding-top: 38px;
+
+              @include mq(800px){
+                max-width: 248px;
+                padding-top: 30px;
+
+                @include mq(410px){
+                  max-width: 230px;
+                  padding-top: 20px;
+                }
+              }
               .name{
-                margin-bottom: 32px;
+                margin-bottom: 20px;
                 color: #333;
                 font-size: 1.91667rem;
                 font-weight: 700;
                 font-style: normal;
                 line-height: normal;
                 letter-spacing: 0.19167rem;
+
+                @include mq(800px){
+                  margin-bottom: 20px;
+                  font-size: 1.8rem;
+                  letter-spacing: 0.15rem;
+
+                  @include mq(500px){
+                    margin-bottom: 0;
+                  }
+                }
               }
 
               .id{
@@ -1474,6 +1867,17 @@
                 font-style: normal;
                 line-height: normal;
                 letter-spacing: 0.1rem;
+
+                @include mq(800px){
+                  margin-bottom: 26px;
+                  font-size: 0.83333rem;
+                  letter-spacing: 0.08333rem;
+
+                  @include mq(500px){
+                    margin-bottom: 10px;
+                    font-size: 1rem;
+                  }
+                }
               }
 
               .follow{
@@ -1486,6 +1890,11 @@
                 font-style: normal;
                 line-height: normal;
                 letter-spacing: 0.1rem;
+
+                @include mq(800px){
+                  font-size: 1rem;
+                  letter-spacing: 0.06667rem;
+                }
                 .span{
                   margin-left: auto;
                   font-size: 1.91667rem;
@@ -1493,6 +1902,11 @@
                   font-style: normal;
                   line-height: normal;
                   letter-spacing: 0.19167rem;
+
+                  @include mq(800px){
+                    font-size: 1.8rem;
+                    letter-spacing: 0.13333rem;
+                  }
                 }
               }
 
@@ -1506,6 +1920,10 @@
                 font-style: normal;
                 line-height: normal;
                 letter-spacing: 0.1rem;
+
+                @include mq(800px){
+                  font-size: 1rem;
+                }
                 .span{
                   margin-left: auto;
                   font-size: 1.91667rem;
@@ -1513,6 +1931,11 @@
                   font-style: normal;
                   line-height: normal;
                   letter-spacing: 0.19167rem;
+
+                  @include mq(800px){
+                    font-size: 1.8rem;
+                    letter-spacing: 0.13333rem;
+                  }
                 }
               }
 
@@ -1527,14 +1950,25 @@
                 font-style: normal;
                 line-height: normal;
                 letter-spacing: 0.1rem;
+
+                @include mq(800px){
+                  font-size: 0.66667rem;
+
+                  @include mq(500px){
+                    font-size: 1rem;
+                  }
+                }
                 .span{
                   font-size: 1.5rem;
                   font-weight: 700;
                   font-style: normal;
                   line-height: normal;
                   letter-spacing: 0.15rem;
-                  position: relative;
-                  left: -1.5rem;
+
+                  @include mq(800px){
+                    font-size: 1.5rem;
+                    letter-spacing: 0.13333rem;
+                  }
                   .num{
                     margin-left: auto;
                     font-size: 1.91667rem;
@@ -1542,6 +1976,14 @@
                     font-style: normal;
                     line-height: normal;
                     letter-spacing: 0.19167rem;
+
+                    @include mq(800px){
+                      font-size: 1.33333rem;
+
+                      @include mq(500px){
+                        font-size: 1.8rem;
+                      }
+                    }
                   }
                 }
               }
@@ -1554,6 +1996,15 @@
             border: 1px solid #f8f8f8;
             border-radius: 10px;
             box-shadow: 10px 10px 25px 0 rgba(221, 221, 221, 0.90) inset, -10px -10px 20px 0 rgba(255, 255, 255, 0.90) inset, 10px -10px 20px 0 rgba(221, 221, 221, 0.20) inset, -10px 10px 20px 0 rgba(221, 221, 221, 0.20) inset;
+
+            @include mq(800px){
+              padding: 24px 20px;
+              background: #f6f6f6;
+            }
+
+
+
+
             .subHeading{
               margin-bottom: 29px;
               color: #000;
@@ -1562,14 +2013,22 @@
               font-style: normal;
               line-height: 168%; /* 1.68rem */
               letter-spacing: 0.03rem;
+
+              @include mq(768px){
+                margin-bottom: 9px;
+              }
             }
 
             .text{
+              margin-bottom: 29px;
               font-size: 0.83333rem;
               font-weight: 400;
               font-style: normal;
               line-height: 168%; /* 1.4rem */
               letter-spacing: 0.025rem;
+              &:last-child{
+                margin-bottom: 0;
+              }
             }
           }
         }
@@ -1582,16 +2041,17 @@
 
 .top_flow{
   margin-bottom: rem(82);
-
   &__inner{
-    padding-bottom: rem(83);
+    padding: 1.375rem 2.5rem 2rem !important;
+    padding-bottom: 30px;
+    border-radius: 1.4583333333rem;
     position: relative;
 
     @include sp{
-      width: 97%;
+      width: 90%;
       padding-top: rem(77);
-      margin-right: 0;
-      border-radius: rem(35) 0 0 rem(35);
+      margin: 0 auto;
+      border-radius: rem(35);
     }
   }
 
@@ -1741,13 +2201,13 @@
 /* qa */
 
 .top_qa{
-  padding-bottom: rem(80);
+  margin-bottom: rem(80);
 
   @include sp{
     padding-bottom: rem(80);
   }
   &__inner{
-    padding-bottom: rem(80);
+    padding-bottom: rem(80) !important;
 
     @include sp{
       padding-top: rem(70);
@@ -1758,7 +2218,7 @@
     .bg{
       width: rem(112);
       top: 45%;
-      left: 12%;
+      left: 20%;
 
       @include sp{
         top: 18%;
@@ -1866,14 +2326,16 @@
 
 .top_partner{
   margin-bottom: rem(80);
+
   &__inner{
     padding-bottom: rem(78);
+    padding-bottom: 40px !important;
 
     @include sp{
-      width: 97%;
+      width: 90%;
       padding-top: rem(55);
-      margin-right: 0;
-      border-radius: rem(35) 0 0 rem(35);
+      margin: 0 auto;
+      border-radius: rem(35);
     }
   }
   &__ttl{
@@ -1915,5 +2377,16 @@
 
   &__line{
     margin-top: rem(77);
+  }
+}
+
+.top_about{
+  margin-bottom: 80px;
+
+  @include mq(768px){
+    margin-bottom: 30px;
+  }
+  .l-sec-box__inner{
+    padding: 1.4rem 2.5rem 3rem;
   }
 }

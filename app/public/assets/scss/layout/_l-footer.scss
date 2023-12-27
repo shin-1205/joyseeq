@@ -4,6 +4,9 @@
   padding: rem(67) 0 rem(48);
   background-color: $key_gray;
   color: #b3b4b5;
+  position: relative;
+  bottom: -33px;
+  z-index: 999;
 
   @include sp{
     padding: rem(90) 0 rem(28);

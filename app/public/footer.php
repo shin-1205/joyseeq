@@ -13,9 +13,15 @@
         </ul>
       </nav>
       <ul class="l-footer__sns">
-        <li class="l-footer__sns-item"> <a href="twitter_jump.php" target="_blank" class="l-footer__sns-link"> <i class="l-footer__sns-icon"> <img src="./assets/images/common/icon_twitter.png" alt=""> </i> <span class="l-footer__sns-text"> Twitter </span> </a> </li>
-        <li class="l-footer__sns-item"> <a href="instagram_jump.php" target="_blank" class="l-footer__sns-link"> <i class="l-footer__sns-icon"> <img src="./assets/images/common/icon_insta.png" alt=""> </i> <span class="l-footer__sns-text"> Instagram </span> </a> </li>
-        <li class="l-footer__sns-item"> <a href="tiktok_jump.php" target="_blank" class="l-footer__sns-link"> <i class="l-footer__sns-icon"> <img src="./assets/images/common/icon_tiktok.png" alt=""> </i> <span class="l-footer__sns-text"> TikTok </span> </a> </li>
+        <li class="l-footer__sns-item"> <a href="twitter_jump.php" target="_blank" class="l-footer__sns-link"> <i
+              class="l-footer__sns-icon"> <img src="./assets/images/common/icon_twitter.png" alt=""> </i> <span
+              class="l-footer__sns-text"> Twitter </span> </a> </li>
+        <li class="l-footer__sns-item"> <a href="instagram_jump.php" target="_blank" class="l-footer__sns-link"> <i
+              class="l-footer__sns-icon"> <img src="./assets/images/common/icon_insta.png" alt=""> </i> <span
+              class="l-footer__sns-text"> Instagram </span> </a> </li>
+        <li class="l-footer__sns-item"> <a href="tiktok_jump.php" target="_blank" class="l-footer__sns-link"> <i
+              class="l-footer__sns-icon"> <img src="./assets/images/common/icon_tiktok.png" alt=""> </i> <span
+              class="l-footer__sns-text"> TikTok </span> </a> </li>
       </ul>
     </div>
     <!-- ./left -->
@@ -34,11 +40,17 @@
 <!-- ./l-wrapper -->
 
 <link rel="stylesheet" href="https://use.typekit.net/lcd1iym.css" media="print" onload="this.media='all'">
-<link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" media="print" onload="this.media='all'">
-<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js" defer></script> 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script> 
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script> 
-<script src="./assets/script/scripts.js?<?php echo mt_rand(); ?>" defer></script> 
+<link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" rel="stylesheet" media="print"
+  onload="this.media='all'">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js" defer></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js" defer></script>
+
+<script src="./assets/script/scripts.js?<?php echo mt_rand(); ?>" defer></script>
 <script src="./assets/script/scroll.js?<?php echo mt_rand(); ?>" defer></script>
 <?php include_once("tag/end_body_tag.php") ?>
-</body></html>
+</body>
+
+</html>
