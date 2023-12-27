@@ -72,13 +72,13 @@ EOD;
 必ず返信いたしますので、しばらくお待ちください。
 
 E-mail: 
-サイト運営者：松下祐子
+サイト運営者：JOYSEEQ
  
 EOD;
 
 
     // 自分に送るお問い合わせ内容メールを構築
-    $to = "iyiyiy.y.i@gmail.com";
+    $to = "#";
     // 相手に送るお問い合わせ内容メールを構築
     $to2 = $email;
 
@@ -104,17 +104,17 @@ EOD;
         header( 'Location:thanks.php' );
       } else { // #4
         $message = '<p class="question-text error">何らかの理由で送信エラーが発生しました<br>しばらく待ってから再度送信してください</p>';
-        header( 'Location:https://polaris-lc.com' );
+        header( 'Location:https://joyseeq.com' );
       } // #4
     } else { // #3
       $message = '<p class="question-text error">『' . $email . '』宛に確認メールを送信できませんでした。<br>正しいメールアドレスで再度ご連絡をお願いいたします。</p>';
-      header( 'Location:https://polaris-lc.com' );
+      header( 'Location:https://joyseeq.com' );
     } // #3
 
   }
 } else { // #1
   // 直接send.phpにアクセスしようとしたら強制的にリダイレクト
-  header( 'Location:https://polaris-lc.com' );
+  header( 'Location:https://joyseeq.com' );
 } // #1
 exit; // スクリプトの実行を終了
 ?>

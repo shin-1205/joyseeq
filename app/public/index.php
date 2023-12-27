@@ -72,7 +72,7 @@ define( 'DESC', 'JOYSEEQは、楽しさとクオリティを追求するライ�
         </div>
         <div class="col  hero_text13">
           <p class="col-top">03</p>
-          <p class="col-mid">最短〇日で！</p>
+          <p class="col-mid">最短2日で！</p>
           <p class="col-bot">TikTokで<br>
             配信スタート</p>
         </div>
@@ -86,7 +86,7 @@ define( 'DESC', 'JOYSEEQは、楽しさとクオリティを追求するライ�
   </section>
   <section class="campaign js_animation fadeup deley01s">
     <div class="campaign__inner">
-      <p class="heading"><span class="span js_animation fadeup deley01s">11月限定キャンペーン</span></p>
+      <p class="heading"><span class="span js_animation fadeup deley01s"><?php echo date('n'); ?>月限定キャンペーン</span></p>
       <div class="box js_animation fadeup deley01s">
         <div class="left js_animation fadeup deley02s">
           <img src="./assets/images/top/amazon-card.png" alt="" class="img">
@@ -230,7 +230,7 @@ define( 'DESC', 'JOYSEEQは、楽しさとクオリティを追求するライ�
                 <p class="id">@ba_chi080998</p>
                 <p class="follow">フォロワー<span class="span">23.9K</span></p>
                 <p class="nice">いいね<span class="span">7.9K</span></p>
-                <p class="year">所属年数<span class="span"><span class="num">OO</span>年目</span></p>
+                <p class="year">所属年数<span class="span"><span class="num">2</span>年目</span></p>
 
               </div>
             </div>
@@ -263,7 +263,7 @@ define( 'DESC', 'JOYSEEQは、楽しさとクオリティを追求するライ�
                 <p class="id">@erichan_desu</p>
                 <p class="follow">フォロワー<span class="span">41.1K</span></p>
                 <p class="nice">いいね<span class="span">66.7K</span></p>
-                <p class="year">所属年数<span class="span"><span class="num">OO</span>年目</span></p>
+                <p class="year">所属年数<span class="span"><span class="num">3</span>年目</span></p>
 
               </div>
               <div class="inner-top__left">
@@ -303,7 +303,7 @@ define( 'DESC', 'JOYSEEQは、楽しさとクオリティを追求するライ�
                 <p class="id">@matumatumatu</p>
                 <p class="follow">フォロワー<span class="span">128.7K</span></p>
                 <p class="nice">いいね<span class="span">1.5M</span></p>
-                <p class="year">所属年数<span class="span"><span class="num">OO</span>年目</span></p>
+                <p class="year">所属年数<span class="span"><span class="num">1</span>年目</span></p>
 
               </div>
             </div>
