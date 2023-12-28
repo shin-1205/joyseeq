@@ -24,7 +24,7 @@ function ua_smt() {
 <html lang="ja">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link href="./assets/style.css?<?php echo mt_rand(); ?>" rel="stylesheet" type="text/css" media="all" />
